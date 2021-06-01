@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= query %> | Scrapey Search Engine</title>
+    <link href="/css/search.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <nav>
+        <h1 class="title">Scrapey</h1>
+        <form method="get">
+            <label>
+                Search:
+                <input type="text" name="q">
+            </label>
+            <input type="submit" value="Search!">
+        </form>
+        <div class="flex-grow"></div>
+    </nav>
+
+    <% rows.forEach(function(thing){ %>
+        <div>
+            <a href="<%= thing.url %>"><%= thing.title %></a>
+            <div><%= thing.url %></div>
+            <div><%= thing.description %></div>
+        </div>
+
+    <% }) %>
+</body>
+</html>
